@@ -16,6 +16,11 @@ packer.startup(function(use)
   use 'hrsh7th/nvim-cmp'
   use 'windwp/nvim-autopairs'
   use 'windwp/nvim-ts-autotag'
+  use 'williamboman/nvim-lsp-installer'
+  use 'nvim-lua/plenary.nvim'
+  use 'nvim-telescope/telescope.nvim'
+  use 'nvim-telescope/telescope-file-browser.nvim'
+  use 'glepnir/lspsaga.nvim'
 
   use {
     'nvim-treesitter/nvim-treesitter',
