@@ -21,6 +21,20 @@ packer.startup(function(use)
   use 'nvim-telescope/telescope.nvim'
   use 'nvim-telescope/telescope-file-browser.nvim'
   use 'glepnir/lspsaga.nvim'
+  use 'github/copilot.vim'
+  use {
+    "zbirenbaum/copilot.lua",
+    event = { "VimEnter" },
+    config = function()
+      vim.defer_fn(function()
+        require("copilot").setup()
+      end, 100)
+    end,
+  }
+  use { 'zbirenbaum/copilot-cmp', module = "copilot_cmp" }
+  use { "catppuccin/nvim", as = "catppuccin" }
+
+
 
   use {
     'nvim-treesitter/nvim-treesitter',

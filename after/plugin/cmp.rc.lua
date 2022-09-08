@@ -19,19 +19,20 @@ cmp.setup({
     }),
   }),
   sources = cmp.config.sources({
-    { name = 'nvim_lsp' },
-    { name = 'buffer' },
+    { name = 'copilot', group_index = 2 },
+    { name = 'nvim_lsp', group_index = 2 },
+    { name = 'luasnip', group_index = 2 },
+
   }),
   formatting = {
     format = lspkind.cmp_format({ with_text = false, maxwidth = 50 })
   }
 })
-
 vim.cmd [[
   set completeopt=menuone,noinsert,noselect
   highlight! default link CmpItemKind CmpItemMenuDefault
 ]]
-
+vim.api.nvim_set_hl(0, "CmpItemKindCopilot", { fg = "#6CC644" })
 cmp.setup {
   mapping = {
     ['<Tab>'] = function(fallback)

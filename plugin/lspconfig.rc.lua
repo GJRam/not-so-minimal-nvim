@@ -34,6 +34,20 @@ require('lspconfig')['pyright'].setup {
   on_attach = on_attach,
 }
 
+nvim_lsp.rust_analyzer.setup {
+  settings = {
+    ["rust-analyzer"] = {
+      workspace = {
+        symbol = {
+          search = {
+            kind = "all_symbols"
+          }
+        }
+      }
+    },
+  }
+}
+
 nvim_lsp.sumneko_lua.setup {
   on_attach = on_attach,
   settings = {
